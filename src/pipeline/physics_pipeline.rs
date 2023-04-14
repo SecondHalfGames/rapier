@@ -489,7 +489,7 @@ impl PhysicsPipeline {
         );
 
         if let Some(queries) = query_pipeline.as_deref_mut() {
-            queries.update_incremental(colliders, &modified_colliders, &removed_colliders, false);
+            queries.update(bodies, colliders);
         }
 
         self.clear_modified_colliders(colliders, &mut modified_colliders);
